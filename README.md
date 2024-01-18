@@ -54,21 +54,23 @@ This approach ensures that the script is robust, extendable, and capable of hand
 2. Navigate to the project directory:
       ```bash
       cd Directory-Comparison
-    
-3. Inside the main.py script, find the following lines:
+                     
+3. Run the script:
+   ```bash
+   python main.py
 
-      ```bash
-      dir1_path = "C:\\Users\\Tal Ben Gozi\\Desktop\\task\\dir1"
-      dir2_path = "C:\\Users\\Tal Ben Gozi\\Desktop\\task\\dir2"
+4. The program ask you to fill in the first path and afterwords the second.
+   you can use my test files from above just change the path according to your system or give a path of your own files. 
+
+* if using my test files:
+
+      dir1_path = "C:\\Users\\Tal Ben Gozi\\Desktop\\my task\\dir1"
+      dir2_path = "C:\\Users\\Tal Ben Gozi\\Desktop\\my task\\dir2"
        
 Update the paths according to your system. For example:
          
          dir1_path = "path/to/your/dir1"
          dir2_path = "path/to/your/dir2"
-                     
-4. Run the script:
-   ```bash
-   python main.py      
 
 ## Dependencies
 
