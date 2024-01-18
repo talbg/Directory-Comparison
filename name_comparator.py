@@ -9,13 +9,13 @@ def print_unique(unique_files_dir1, unique_files_dir2):
     # Print unique files in directory_1 against directory_2 and vise versa
     print(f"\nUnique files in directory_1 but not in directory_2:")
     if not unique_files_dir1:
-        print("There are no unique files in directory_1")
+        print("There are no unique files in directory_1\n")
     else:
         print("\n".join(f"{idx}. {file}" for idx, file in enumerate(unique_files_dir1, start=1)))
 
-    print(f"\nUnique files in directory_2 but not in directory_1")
+    print(f"\nUnique files in directory_2 but not in directory_1:")
     if not unique_files_dir2:
-        print("There are no unique files in directory_2")
+        print("There are no unique files in directory_2\n")
     else:
         print("\n".join(f"{idx}. {file}" for idx, file in enumerate(unique_files_dir2, start=1)))
 

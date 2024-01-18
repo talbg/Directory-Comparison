@@ -2,7 +2,7 @@ import os
 from PIL import Image
 from image.compare_images import compare_images, file_is_image
 from archive.compare_size import file_is_archive, compare_archive_sizes
-from functions import create_unique_set, print_unique, create_common_set
+from name_comparator import create_unique_set, print_unique, create_common_set
 
 def compare_directories(dir1_path, dir2_path):
     print(f"\nComparing directories:  \"{dir1_path}\"  AND  \"{dir2_path}\"")
@@ -47,7 +47,7 @@ def compare_common(dir1_path,dir2_path,common_files):
         
 
     print("\nSUMMARY:")
-    print(f"Number of common enfiles: {len(common_files)}")
+    print(f"Number of common files: {len(common_files)}")
     print(f"\nNumber of identical files: {identical_files}")
     if identical_files > 0:
         print("\nIdentical file names:")
@@ -62,7 +62,7 @@ def compare_common(dir1_path,dir2_path,common_files):
         
     print(f"\nNumber of unsupported files: {unsupported_files}")
     if unsupported_files > 0:
-        print("\nUnsupported_files file names:")
+        print("\nUnsupported file names:")
         for name in unsupported_files_names:
             print(name)
 
@@ -76,7 +76,7 @@ def compare_common_files(file, file_path1, file_path2):
     elif file_is_archive(file_path1) and file_is_archive(file_path2):
         return compare_archive_sizes(file, file_path1, file_path2)
     else:
-        print(f"Unsupported file type: {file_path1} and {file_path2}")
+        print(f"Unsupported file type: {file}")
         return 0
 
 
