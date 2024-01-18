@@ -82,3 +82,11 @@ Update the paths according to your system. For example:
     pip install Pillow
 
 2. Ensure your Python version is 3.0 and above.
+
+
+
+
+## sapmle of my output:
+![image](https://github.com/talbg/Directory-Comparison/assets/57101649/283da697-0fa2-450a-b3d0-6ebfd428c56f)
+
+
