@@ -12,10 +12,10 @@ def compare_archive_sizes(file, archive_path1, archive_path2):
 
         if size1 == size2:
             print(f"Archives {file} have the same size")
-            return True
+            return 1
         else:
             print(f"Archives {file} have different sizes")
-            return False
+            return -1
     except (OSError, FileNotFoundError) as e:
         print(f"Error comparing archive sizes: {e}")
-        return False
+        return 0

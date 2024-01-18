@@ -26,8 +26,8 @@ def compare_directories(dir1_path, dir2_path):
 
 def compare_common(dir1_path,dir2_path,common_files):
     # Create counters and lists for later summary report
-    identical_files,not_identical_files = 0,0
-    identical_file_names,not_identical_file_names = [],[]
+    identical_files, not_identical_files, unsupported_files = 0, 0, 0
+    identical_file_names, not_identical_file_names, unsupported_files_names = [],[], []
 
     # Compare common files
     for file in common_files:
@@ -35,15 +35,19 @@ def compare_common(dir1_path,dir2_path,common_files):
         file_path1 = os.path.join(dir1_path, file)
         file_path2 = os.path.join(dir2_path, file)
         is_identical = compare_common_files(file, file_path1, file_path2) #Check file types and perform specific comparisons
-        if is_identical:
+        if is_identical == 1:
             identical_files += 1
             identical_file_names.append(file)
-        else:
+        elif is_identical == -1:
             not_identical_files += 1
             not_identical_file_names.append(file)
+        else :
+            unsupported_files += 1
+            unsupported_files_names.append(file)
+        
 
     print("\nSUMMARY:")
-    print(f"Number of common files: {len(common_files)}")
+    print(f"Number of common enfiles: {len(common_files)}")
     print(f"\nNumber of identical files: {identical_files}")
     if identical_files > 0:
         print("\nIdentical file names:")
@@ -54,6 +58,12 @@ def compare_common(dir1_path,dir2_path,common_files):
     if not_identical_files > 0:
         print("\nNot identical file names:")
         for name in not_identical_file_names:
+            print(name)
+        
+    print(f"\nNumber of unsupported files: {unsupported_files}")
+    if unsupported_files > 0:
+        print("\nUnsupported_files file names:")
+        for name in unsupported_files_names:
             print(name)
 
 
@@ -67,6 +77,6 @@ def compare_common_files(file, file_path1, file_path2):
         return compare_archive_sizes(file, file_path1, file_path2)
     else:
         print(f"Unsupported file type: {file_path1} and {file_path2}")
-        return False
+        return 0
 
 

@@ -16,7 +16,7 @@ def compare_images(file, image_path1, image_path2):
 
     if image1.size == image2.size and list(image1.getdata()) == list(image2.getdata()):
         print(f"Images {file} are identical.")
-        return True
+        return 1
     else:
         print(f"Images {file} are not identical.")
-        return False
+        return -1
